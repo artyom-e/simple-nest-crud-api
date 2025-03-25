@@ -5,7 +5,7 @@ services:
     volumes:
       - ./:/usr/src/app
     ports:
-      - ${NODE_PORT}:3000
+      - ${APP_PORT}:${APP_PORT}
     command: ['npm', 'run', 'start:dev']
 
   postgres:
@@ -13,9 +13,9 @@ services:
     restart: always
     shm_size: 128mb
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DATABASE}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
     volumes:
       - ./docker_data/postgres:/var/lib/postgresql/data
     ports:
