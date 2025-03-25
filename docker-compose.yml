@@ -1,0 +1,22 @@
+services:
+  node:
+    build: ./
+    user: root
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - ${NODE_PORT}:3000
+    command: ['npm', 'run', 'start:dev']
+
+  postgres:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+    volumes:
+      - ./docker_data/postgres:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT}:5432
