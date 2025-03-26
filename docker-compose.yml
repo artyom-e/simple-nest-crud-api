@@ -19,4 +19,4 @@ services:
     volumes:
       - ./docker_data/postgres:/var/lib/postgresql/data
     ports:
-      - ${POSTGRES_PORT}:5432
+      - ${DATABASE_EXTERNAL_PORT}:5432
