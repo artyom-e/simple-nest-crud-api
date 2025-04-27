@@ -8,6 +8,7 @@ import auth from './config/auth.config';
 import { UsersModule } from './users/users.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
+import { TaskListsModule } from './task-lists/task-lists.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     PrismaModule,
     AuthModule,
+    TaskListsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

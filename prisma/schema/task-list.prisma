@@ -1,9 +1,11 @@
 model TaskList {
-  id          Int     @id @default(autoincrement())
-  userId      Int     @map("user_id")
-  title       String  @db.VarChar(255)
+  id          Int      @id @default(autoincrement())
+  userId      Int      @map("user_id")
+  title       String   @db.VarChar(255)
   description String?
-  user        User    @relation(fields: [userId], references: [id])
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   Task        Task[]
 
   @@map("task_lists")

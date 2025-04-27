@@ -10,14 +10,14 @@ export class AuthController {
   @Post('sign-up')
   async signUp(@Body() data: SignUpDto) {
     return {
-      auth_token: await this.authService.signUp(data),
+      access_token: await this.authService.signUp(data),
     };
   }
 
   @Post('sign-in')
   async signIn(@Body() data: SignInDto) {
     return {
-      auth_token: await this.authService.signIn(data),
+      access_token: await this.authService.signIn(data),
     };
   }
 }
