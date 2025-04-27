@@ -1,6 +1,0 @@
-model User {
-  @@map("users")
-  id Int @id @default(autoincrement())
-  email String @db.VarChar(255) @unique
-  password String @db.VarChar(64)
-}
