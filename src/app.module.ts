@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { TaskListsModule } from './task-lists/task-lists.module';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { TaskListsModule } from './task-lists/task-lists.module';
     PrismaModule,
     AuthModule,
     TaskListsModule,
+    TasksModule,
   ],
   controllers: [AppController],
   providers: [AppService],
